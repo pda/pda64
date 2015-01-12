@@ -1,9 +1,14 @@
-pda64.img: write_boot_sector boot_sector
-	cp boot_sector pda64.img
-	./write_boot_sector
+pda64.img: boot sign_boot_sector
+	cp boot pda64.img
+	./sign_boot_sector
 
-boot_sector: boot_sector.s
-	nasm -o boot_sector boot_sector.s
+boot: boot.s
+	nasm -o boot boot.s
 
-write_boot_sector: write_boot_sector.c
-	clang -o write_boot_sector write_boot_sector.c
+sign_boot_sector: sign_boot_sector.c
+	clang -o sign_boot_sector sign_boot_sector.c
+
+.PHONY: clean
+
+clean:
+	rm -f pda64.img boot_sector sign_boot_sector

@@ -1,1 +1,4 @@
 /*.img
+/boot
+/boot_sector
+/sign_boot_sector
