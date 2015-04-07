@@ -13,7 +13,12 @@ write_message_tty_style_loop:
 	cmp	bx, after_message-message
 	jb	write_message_tty_style_loop
 
+halt_and_catch_fire:
+	cli
+	hlt
+	jmp	halt_and_catch_fire
+
 
 message:
-	db "pda64 booting..."
+	db "Booting..."
 after_message:
