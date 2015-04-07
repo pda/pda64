@@ -1,0 +1,2 @@
+boot: disk
+ata0-master: type=disk, path="pda64.img", mode=flat, cylinders=1, heads=1, spt=1, model="Generic 1234", biosdetect=auto, translation=auto
