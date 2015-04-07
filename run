@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eou pipefail
+
+qemu-system-x86_64 pda64.img
